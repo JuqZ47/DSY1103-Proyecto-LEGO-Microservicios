@@ -17,30 +17,24 @@ import java.util.List;
 public class CatalogoController {
     private final CatalogoService catalogoService;
 
-
     @GetMapping
-    public ResponseEntity<List<CatalogoResponseDTO>> obtenerTodos() {
+    public ResponseEntity<List<CatalogoResponseDTO>> listar() {
         return ResponseEntity.ok(catalogoService.obtenerTodos());
     }
 
-
-    @GetMapping("/{id}")
-    public ResponseEntity<CatalogoResponseDTO> obtenerPorId(@PathVariable Long id) {
-        return catalogoService.obtenerPorId(id)
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
-
     @PostMapping
-    public ResponseEntity<CatalogoResponseDTO> guardar(@Valid @RequestBody CatalogoRequestDTO request) {
+    public ResponseEntity<CatalogoResponseDTO> crear(@Valid @RequestBody CatalogoRequestDTO request) {
         return new ResponseEntity<>(catalogoService.guardar(request), HttpStatus.CREATED);
     }
-
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         catalogoService.eliminar(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<CatalogoResponseDTO> actualizar(@PathVariable Long id, @Valid @RequestBody CatalogoRequestDTO request) {
+        return ResponseEntity.ok(catalogoService.actualizar(id, request));
     }
 }
