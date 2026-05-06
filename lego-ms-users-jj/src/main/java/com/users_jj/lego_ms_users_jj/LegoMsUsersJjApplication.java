@@ -1,13 +1,13 @@
-package com.orders_jj.lego_ms_orders_jj;
+package com.users_jj.lego_ms_users_jj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LegoMsOrdersJjApplication {
+public class LegoMsUsersJjApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LegoMsOrdersJjApplication.class, args);
+		SpringApplication.run(LegoMsUsersJjApplication.class, args);
 	}
 
 }
