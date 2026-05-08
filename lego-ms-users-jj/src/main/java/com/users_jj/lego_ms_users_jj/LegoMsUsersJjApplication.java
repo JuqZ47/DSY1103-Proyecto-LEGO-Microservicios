@@ -1,0 +1,13 @@
+package com.users_jj.lego_ms_users_jj;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LegoMsUsersJjApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LegoMsUsersJjApplication.class, args);
+	}
+
+}
