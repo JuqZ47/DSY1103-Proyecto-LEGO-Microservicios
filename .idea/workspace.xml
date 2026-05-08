@@ -9,10 +9,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventario-jj/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventario-jj/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pago-jj2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pago-jj2/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pago-jj2/src/main/java/com/pago_jj2/PagoJj2Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/pago-jj2/src/main/java/com/pago_jj2/PagoJj2Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pago-jj2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pago-jj2/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +32,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "JuqZ47"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/JuqZ47/DSY1103-Proyecto-LEGO-Microservicios.git",
+    "accountId": "21104204-22a2-4d08-971a-36011d5d2abe"
+  }
+}]]></component>
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupGrunt">
       <scroll-view-position x="0" y="0" />
@@ -70,20 +78,50 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.EnvioJjApplication.executor": "Run",
     "Spring Boot.PagoJj2Application.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "Merging julianRomero",
+    "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/pepem/OneDrive/Desktop/Lego-jj-2",
+    "last_opened_file_path": "C:/Users/romer/OneDrive/Desktop/Proyecto fullstack/LegoJJ",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.PagoJj2Application">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\romer\OneDrive\Desktop\Proyecto fullstack\LegoJJ\envio-jj\src\main\java\com\envio_jj" />
+      <recent name="C:\Users\romer\OneDrive\Desktop\Proyecto fullstack\LegoJJ\envio-jj\src\main\java\com" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="EnvioJjApplication" value="FAILED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EnvioJjApplication">
     <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lego_jj.eureka_server.EurekaServerApplication" />
       <module name="eureka-server" />
@@ -101,6 +139,13 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="inventario-jj (1)" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.catalogo_jj.catalogo_jj.CatalogoJjApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EnvioJjApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="envio-jj" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.envio_jj.EnvioJjApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,6 +193,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1778013857574</updated>
+      <workItem from="1778251684150" duration="1586000" />
     </task>
     <servers />
   </component>
