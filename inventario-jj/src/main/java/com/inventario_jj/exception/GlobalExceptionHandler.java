@@ -1,4 +1,4 @@
-package com.inventario_jj.inventario_jj.exception;
+package com.inventario_jj.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

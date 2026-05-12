@@ -1,4 +1,4 @@
-package com.inventario_jj.inventario_jj.dto;
+package com.inventario_jj.dto;
 
 import lombok.Builder;
 import lombok.Data;
