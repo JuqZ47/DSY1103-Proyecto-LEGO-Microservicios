@@ -5,23 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f01082d8-2d72-43e8-9be5-217724b76dab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/controller/PedidoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/dto/PedidoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/repository/PedidoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/service/PedidoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/controller/PedidoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/dto/PedidoRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/model/Pedido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/repository/PedidoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/service/PedidoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/src/test/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj - github" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/lego-ms-orders-jj/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/lego-ms-orders-jj/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/lego-ms-orders-jj/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/lego-ms-orders-jj/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/lego-ms-orders-jj/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/lego-ms-orders-jj/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/model/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/lego-ms-orders-jj/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/lego-ms-orders-jj/src/test/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/test/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-users-jj/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-users-jj/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-users-jj/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-users-jj/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-users-jj/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-users-jj/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-users-jj/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-users-jj/src/main/java/com/users_jj/lego_ms_users_jj/LegoMsUsersJjApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-users-jj/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-users-jj/src/test/java/com/users_jj/lego_ms_users_jj/LegoMsUsersJjApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
