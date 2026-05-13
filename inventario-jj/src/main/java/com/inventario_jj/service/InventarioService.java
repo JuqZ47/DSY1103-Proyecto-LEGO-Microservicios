@@ -1,10 +1,10 @@
-package com.inventario_jj.inventario_jj.service;
+package com.inventario_jj.service;
 
-import com.inventario_jj.inventario_jj.catalogofeing.CatalogoClient;
-import com.inventario_jj.inventario_jj.dto.InventarioRequestDTO;
-import com.inventario_jj.inventario_jj.dto.InventarioResponseDTO;
-import com.inventario_jj.inventario_jj.model.Inventario;
-import com.inventario_jj.inventario_jj.repository.InventarioRepository;
+import com.inventario_jj.catalogofeing.CatalogoClient;
+import com.inventario_jj.dto.InventarioRequestDTO;
+import com.inventario_jj.dto.InventarioResponseDTO;
+import com.inventario_jj.model.Inventario;
+import com.inventario_jj.repository.InventarioRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

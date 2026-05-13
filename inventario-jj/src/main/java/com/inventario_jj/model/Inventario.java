@@ -1,4 +1,4 @@
-package com.inventario_jj.inventario_jj.model;
+package com.inventario_jj.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,8 +1,8 @@
-package com.inventario_jj.inventario_jj.controller;
+package com.inventario_jj.controller;
 
-import com.inventario_jj.inventario_jj.dto.InventarioRequestDTO;
-import com.inventario_jj.inventario_jj.dto.InventarioResponseDTO;
-import com.inventario_jj.inventario_jj.service.InventarioService;
+import com.inventario_jj.dto.InventarioRequestDTO;
+import com.inventario_jj.dto.InventarioResponseDTO;
+import com.inventario_jj.service.InventarioService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

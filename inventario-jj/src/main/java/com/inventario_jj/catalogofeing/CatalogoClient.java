@@ -1,4 +1,4 @@
-package com.inventario_jj.inventario_jj.catalogofeing;
+package com.inventario_jj.catalogofeing;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

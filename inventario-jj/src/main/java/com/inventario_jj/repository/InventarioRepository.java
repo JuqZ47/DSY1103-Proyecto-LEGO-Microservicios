@@ -1,6 +1,6 @@
-package com.inventario_jj.inventario_jj.repository;
+package com.inventario_jj.repository;
 
-import com.inventario_jj.inventario_jj.model.Inventario;
+import com.inventario_jj.model.Inventario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
