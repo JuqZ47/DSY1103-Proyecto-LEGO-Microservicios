@@ -1,4 +1,4 @@
-package com.catalogo_jj.catalogo_jj.model;
+package com.catalogo_jj.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,95 +1,83 @@
 package com.inventario_jj.service;
 
+import com.inventario_jj.catalogofeing.AuthClient;
 import com.inventario_jj.catalogofeing.CatalogoClient;
+import com.inventario_jj.dto.AuthResponseDTO;
 import com.inventario_jj.dto.InventarioRequestDTO;
 import com.inventario_jj.dto.InventarioResponseDTO;
-import com.inventario_jj.model.Inventario;
+import com.inventario_jj.model.Inventario; // Tu entidad de base de datos
 import com.inventario_jj.repository.InventarioRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class InventarioService {
-    private final InventarioRepository inventarioRepository;
-    private final CatalogoClient catalogoClient; // Cliente Feign para hablar con Catálogo
 
+    private final InventarioRepository repository;
+    private final AuthClient authClient;
+    private final CatalogoClient catalogoClient;
 
-    public InventarioResponseDTO guardarStock(InventarioRequestDTO request) {
-        log.info("Iniciando registro de stock para LEGO ID: {}", request.getIdLegoReferencia());
+    // --- REGISTRAR O ACTUALIZAR STOCK ---
+    public InventarioResponseDTO guardarStock(InventarioRequestDTO dto, String token) {
+        AuthResponseDTO auth = authClient.validarToken(token);
 
-        //Validar que el LEGO exista en el otro microservicio
-        validarExistenciaLego(request.getIdLegoReferencia());
+        // Regla: Solo el personal de bodega o ADMIN gestiona el inventario físico
+        if (!"ADMIN".equals(auth.getRol())) {
+            throw new RuntimeException("Acceso denegado: No tienes permisos para gestionar bodega.");
+        }
 
-        Inventario stock = Inventario.builder()
-                .idLegoReferencia(request.getIdLegoReferencia())
-                .cantidad(request.getCantidad())
-                .ubicacion(request.getUbicacion())
-                .build();
+        // Validación Distribuidora: ¿El Lego existe en el catálogo?
+        Object lego = catalogoClient.obtenerLegoPorId(dto.getIdLegoReferencia(), token);
+        if (lego == null) {
+            throw new RuntimeException("No se puede registrar: El ID de referencia " + dto.getIdLegoReferencia() + " no existe.");
+        }
 
-        return mapToResponse(inventarioRepository.save(stock));
+        // Buscamos si ya existe para actualizarlo o crear uno nuevo
+        Inventario inventario = repository.findByIdLegoReferencia(dto.getIdLegoReferencia())
+                .orElse(new Inventario());
+
+        inventario.setIdLegoReferencia(dto.getIdLegoReferencia());
+        inventario.setCantidad(dto.getCantidad());
+        inventario.setUbicacion(dto.getUbicacion());
+
+        return mapToDTO(repository.save(inventario));
     }
 
-
-    public List<InventarioResponseDTO> obtenerTodo() {
-        log.info("Consultando lista completa de inventario");
-        return inventarioRepository.findAll().stream()
-                .map(this::mapToResponse)
+    // --- LISTAR TODO EL INVENTARIO ---
+    public List<InventarioResponseDTO> obtenerTodos(String token) {
+        authClient.validarToken(token);
+        return repository.findAll().stream()
+                .map(this::mapToDTO)
                 .collect(Collectors.toList());
     }
 
-
-    public InventarioResponseDTO actualizar(Long id, InventarioRequestDTO request) {
-        log.info("Actualizando stock con ID: {}", id);
-
-        return inventarioRepository.findById(id)
-                .map(stockExistente -> {
-                    // Si el usuario cambia el ID de referencia, volvemos a validar
-                    if (!stockExistente.getIdLegoReferencia().equals(request.getIdLegoReferencia())) {
-                        validarExistenciaLego(request.getIdLegoReferencia());
-                    }
-
-                    stockExistente.setIdLegoReferencia(request.getIdLegoReferencia());
-                    stockExistente.setCantidad(request.getCantidad());
-                    stockExistente.setUbicacion(request.getUbicacion());
-
-                    return mapToResponse(inventarioRepository.save(stockExistente));
-                })
-                .orElseThrow(() -> new RuntimeException("No se encontró el registro de stock con ID: " + id));
+    // --- BUSCAR STOCK ESPECÍFICO ---
+    public InventarioResponseDTO obtenerPorLegoId(Long idLego, String token) {
+        authClient.validarToken(token);
+        return repository.findByIdLegoReferencia(idLego)
+                .map(this::mapToDTO)
+                .orElseThrow(() -> new RuntimeException("No se encontró stock para este producto."));
     }
 
-
-    public void eliminar(Long id) {
-        log.warn("Eliminando registro de inventario ID: {}", id);
-        if (!inventarioRepository.existsById(id)) {
-            throw new RuntimeException("Error: Registro de inventario no encontrado.");
+    // --- ELIMINAR REGISTRO ---
+    public void eliminar(Long id, String token) {
+        AuthResponseDTO auth = authClient.validarToken(token);
+        if (!"ADMIN".equals(auth.getRol())) {
+            throw new RuntimeException("Operación prohibida.");
         }
-        inventarioRepository.deleteById(id);
+        repository.deleteById(id);
     }
 
-
-    private void validarExistenciaLego(Long idLego) {
-        try {
-            log.info("Llamando a ms-catalogo para validar ID: {}", idLego);
-            catalogoClient.obtenerLegoPorId(idLego);
-        } catch (Exception e) {
-            log.error("Validación fallida: El LEGO con ID {} no existe en el catálogo", idLego);
-            throw new RuntimeException("No se puede gestionar el stock: El producto no existe en el catálogo.");
-        }
-    }
-
-
-    private InventarioResponseDTO mapToResponse(Inventario stock) {
+    private InventarioResponseDTO mapToDTO(Inventario inv) {
         return InventarioResponseDTO.builder()
-                .id(stock.getId())
-                .idLegoReferencia(stock.getIdLegoReferencia())
-                .cantidad(stock.getCantidad())
-                .ubicacion(stock.getUbicacion())
+                .id(inv.getId())
+                .idLegoReferencia(inv.getIdLegoReferencia())
+                .cantidad(inv.getCantidad())
+                .ubicacion(inv.getUbicacion())
                 .build();
     }
 }

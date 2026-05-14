@@ -1,10 +1,11 @@
 package com.usuario_jj.service;
 
+import com.usuario_jj.client.AuthClient;
+import com.usuario_jj.dto.AuthResponseDTO;
 import com.usuario_jj.dto.UsuarioRequestDTO;
 import com.usuario_jj.dto.UsuarioResponseDTO;
 import com.usuario_jj.model.Usuario;
 import com.usuario_jj.repository.UsuarioRepository;
-import com.usuario_jj.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,37 +17,51 @@ import java.util.stream.Collectors;
 public class UsuarioService {
 
     private final UsuarioRepository repository;
+    private final AuthClient authClient;
 
-    public List<UsuarioResponseDTO> listarTodos() {
+    // --- CREATE (REGISTRO PÚBLICO) ---
+    public UsuarioResponseDTO registrar(UsuarioRequestDTO dto) {
+        Usuario usuario = new Usuario();
+        usuario.setNombre(dto.getNombre());
+        usuario.setCorreo(dto.getCorreo());
+        usuario.setPassword(dto.getPassword()); // Nota: Idealmente encriptar con BCrypt
+        usuario.setRol(dto.getRol() != null ? dto.getRol() : "USER");
+
+        return mapToDTO(repository.save(usuario));
+    }
+
+    // --- READ ALL (SOLO ADMIN) ---
+    public List<UsuarioResponseDTO> obtenerTodos(String token) {
+        AuthResponseDTO auth = authClient.validarToken(token);
+
+        if (!"ADMIN".equals(auth.getRol())) {
+            throw new RuntimeException("Acceso denegado: Solo el administrador puede ver la lista global.");
+        }
+
         return repository.findAll().stream()
-                .map(this::convertirADTO)
+                .map(this::mapToDTO)
                 .collect(Collectors.toList());
     }
 
-    public UsuarioResponseDTO registrar(UsuarioRequestDTO request) {
-        Usuario usuario = new Usuario();
-        usuario.setNombre(request.getNombre());
-        usuario.setCorreo(request.getCorreo());
-        usuario.setPassword(request.getPassword());
-        usuario.setRol(request.getRol());
-
-        return convertirADTO(repository.save(usuario));
+    // --- READ BY ID ---
+    public UsuarioResponseDTO obtenerPorId(Long id, String token) {
+        authClient.validarToken(token);
+        return repository.findById(id)
+                .map(this::mapToDTO)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con ID: " + id));
     }
 
-    public UsuarioResponseDTO actualizar(Long id, UsuarioRequestDTO request) {
-        return repository.findById(id).map(u -> {
-            u.setNombre(request.getNombre());
-            u.setCorreo(request.getCorreo());
-            u.setRol(request.getRol());
-            return convertirADTO(repository.save(u));
-        }).orElseThrow(() -> new ResourceNotFoundException("Usuario no encontrado"));
-    }
-
-    public void eliminar(Long id) {
+    // --- DELETE ---
+    public void eliminar(Long id, String token) {
+        AuthResponseDTO auth = authClient.validarToken(token);
+        if (!"ADMIN".equals(auth.getRol())) {
+            throw new RuntimeException("No tienes permisos para eliminar usuarios.");
+        }
         repository.deleteById(id);
     }
 
-    private UsuarioResponseDTO convertirADTO(Usuario u) {
+    // Mapeo usando @Builder de tu UsuarioResponseDTO
+    private UsuarioResponseDTO mapToDTO(Usuario u) {
         return UsuarioResponseDTO.builder()
                 .id(u.getId())
                 .nombre(u.getNombre())

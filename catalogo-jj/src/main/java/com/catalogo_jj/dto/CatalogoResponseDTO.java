@@ -1,4 +1,4 @@
-package com.catalogo_jj.catalogo_jj.dto;
+package com.catalogo_jj.dto;
 
 import lombok.Builder;
 import lombok.Data;

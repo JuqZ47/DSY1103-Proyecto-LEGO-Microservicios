@@ -62,7 +62,7 @@ public class AuthService {
     public AuthResponseDTO login(String username, String password) {
         Autenticacion user = repository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado en el sistema")); // 400 Bad Request
-        // [cite: 102]
+
 
         if (!encoder.matches(password, user.getPassword())) {
             throw new RuntimeException("La contraseña ingresada es incorrecta");
