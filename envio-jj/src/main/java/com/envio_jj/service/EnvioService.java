@@ -1,10 +1,9 @@
 package com.envio_jj.service;
-import com.envio_jj.dto.EnvioRequestDTO;
-import com.envio_jj.dto.EnvioResponseDTO;
+import com.envio_jj.client.AuthClient;
+import com.envio_jj.client.PagoClient;
+import com.envio_jj.dto.*;
 import com.envio_jj.model.Envio;
 import com.envio_jj.repository.EnvioRepository;
-import com.envio_jj.client.PagoClient;
-import com.envio_jj.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,56 +14,62 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class EnvioService {
+
     private final EnvioRepository repository;
+    private final AuthClient authClient;
     private final PagoClient pagoClient;
 
-    //LISTAR TODOS (Convertidos a DTO)
-    public List<EnvioResponseDTO> listarTodos() {
-        return repository.findAll().stream()
-                .map(this::convertirAEntidadDTO)
-                .collect(Collectors.toList());
-    }
+    // --- CREATE ---
+    public EnvioResponseDTO registrarEnvio(EnvioRequestDTO dto, String token) {
+        // 1. Validar Token con Auth-JJ
+        authClient.validarToken(token);
 
-    //REGISTRAR (Validando con Feign)
-    public EnvioResponseDTO registrarEnvio(EnvioRequestDTO request) {
-        // Validamos si el pago existe en el microservicio pago-jj
-        Object pago = pagoClient.obtenerPagoPorId(request.getIdPago());
-
-        if (pago == null) {
-            throw new ResourceNotFoundException("No se puede generar el envío: Pago ID " + request.getIdPago() + " no encontrado.");
+        // 2. Validar que el Pago exista con Pago-JJ2
+        try {
+            pagoClient.obtenerPagoPorId(dto.getIdPago(), token);
+        } catch (Exception e) {
+            throw new RuntimeException("No se puede crear el envío: El pago con ID " + dto.getIdPago() + " no fue encontrado.");
         }
 
         Envio envio = new Envio();
-        envio.setIdPago(request.getIdPago());
-        envio.setDireccionDestino(request.getDireccionDestino());
-        envio.setEstado("PREPARANDO");
+        envio.setIdPago(dto.getIdPago());
+        envio.setDireccionDestino(dto.getDireccionDestino());
+        envio.setEstado("PREPARANDO"); // Estado inicial
         envio.setFechaDespacho(LocalDateTime.now());
 
-        Envio guardado = repository.save(envio);
-        return convertirAEntidadDTO(guardado);
+        return mapToDTO(repository.save(envio));
     }
 
-    //ELIMINAR
-    public void eliminarEnvio(Long id) {
-        if (!repository.existsById(id)) {
-            throw new ResourceNotFoundException("Envío no encontrado con ID: " + id);
+    // --- READ ALL ---
+    public List<EnvioResponseDTO> obtenerTodos(String token) {
+        AuthResponseDTO auth = authClient.validarToken(token);
+
+        // Solo Admin o Logística ven todos los envíos
+        if ("USER".equals(auth.getRol())) {
+            throw new RuntimeException("Acceso denegado: No tienes permisos para ver todos los despachos.");
         }
-        repository.deleteById(id);
+
+        return repository.findAll().stream()
+                .map(this::mapToDTO)
+                .collect(Collectors.toList());
     }
 
-    // ACTUALIZAR
-    public EnvioResponseDTO actualizarEnvio(Long id, EnvioRequestDTO request) {
-        return repository.findById(id).map(envio -> {
-            // Actualizamos solo los campos necesarios
-            envio.setDireccionDestino(request.getDireccionDestino());
-            // Aquí podrías agregar lógica para actualizar el estado si lo sumas al DTO
-            Envio actualizado = repository.save(envio);
-            return convertirAEntidadDTO(actualizado);
-        }).orElseThrow(() -> new ResourceNotFoundException("No se puede actualizar: Envío con ID " + id + " no existe."));
+    // --- UPDATE ESTADO ---
+    public EnvioResponseDTO actualizarEstado(Long id, String nuevoEstado, String token) {
+        AuthResponseDTO auth = authClient.validarToken(token);
+
+        if (!"ADMIN".equals(auth.getRol())) {
+            throw new RuntimeException("Solo el administrador puede cambiar el estado de un envío.");
+        }
+
+        Envio envio = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Envío no encontrado"));
+
+        envio.setEstado(nuevoEstado);
+        return mapToDTO(repository.save(envio));
     }
 
-
-    private EnvioResponseDTO convertirAEntidadDTO(Envio envio) {
+    private EnvioResponseDTO mapToDTO(Envio envio) {
         return EnvioResponseDTO.builder()
                 .id(envio.getId())
                 .direccionDestino(envio.getDireccionDestino())

@@ -1,4 +1,4 @@
-package com.catalogo_jj.catalogo_jj.dto;
+package com.catalogo_jj.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;

@@ -1,7 +1,7 @@
-package com.catalogo_jj.catalogo_jj.repository;
+package com.catalogo_jj.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.catalogo_jj.catalogo_jj.model.Lego;
+import com.catalogo_jj.model.Lego;
 
 import java.util.Optional;
 

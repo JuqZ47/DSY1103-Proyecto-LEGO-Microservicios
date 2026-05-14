@@ -3,6 +3,7 @@ package com.usuario_jj.controller;
 import com.usuario_jj.dto.UsuarioRequestDTO;
 import com.usuario_jj.dto.UsuarioResponseDTO;
 import com.usuario_jj.service.UsuarioService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,24 +17,24 @@ public class UsuarioController {
 
     private final UsuarioService service;
 
+    @PostMapping("/registro")
+    public ResponseEntity<UsuarioResponseDTO> crear(@Valid @RequestBody UsuarioRequestDTO dto) {
+        return ResponseEntity.status(201).body(service.registrar(dto));
+    }
+
     @GetMapping
-    public List<UsuarioResponseDTO> listar() {
-        return service.listarTodos();
+    public ResponseEntity<List<UsuarioResponseDTO>> listar(@RequestHeader("Authorization") String token) {
+        return ResponseEntity.ok(service.obtenerTodos(token));
     }
 
-    @PostMapping
-    public UsuarioResponseDTO crear(@RequestBody UsuarioRequestDTO request) {
-        return service.registrar(request);
-    }
-
-    @PutMapping("/{id}")
-    public UsuarioResponseDTO editar(@PathVariable Long id, @RequestBody UsuarioRequestDTO request) {
-        return service.actualizar(id, request);
+    @GetMapping("/{id}")
+    public ResponseEntity<UsuarioResponseDTO> buscar(@PathVariable Long id, @RequestHeader("Authorization") String token) {
+        return ResponseEntity.ok(service.obtenerPorId(id, token));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
-        service.eliminar(id);
+    public ResponseEntity<Void> borrar(@PathVariable Long id, @RequestHeader("Authorization") String token) {
+        service.eliminar(id, token);
         return ResponseEntity.noContent().build();
     }
 }
