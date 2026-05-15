@@ -60,6 +60,24 @@ public class UsuarioService {
         repository.deleteById(id);
     }
 
+    // --- READ BY CORREO ---
+    public UsuarioResponseDTO buscarPorCorreo(String correo, String token) {
+        AuthResponseDTO auth = authClient.validarToken(token);
+        if (!"ADMIN".equals(auth.getRol())) {
+            throw new RuntimeException("Acceso denegado: No tienes permisos para realizar búsquedas.");
+        }
+        Usuario usuario = repository.findByCorreo(correo)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con el correo: " + correo));
+        return mapToDTO(usuario);
+    }
+
+    // Este método es para el proceso de Login (No pide token)
+    public UsuarioResponseDTO buscarParaAutenticacion(String correo) {
+        Usuario usuario = repository.findByCorreo(correo)
+                .orElseThrow(() -> new RuntimeException("No existe en Oracle"));
+        return mapToDTO(usuario);
+    }
+
     // Mapeo usando @Builder de tu UsuarioResponseDTO
     private UsuarioResponseDTO mapToDTO(Usuario u) {
         return UsuarioResponseDTO.builder()
@@ -69,4 +87,5 @@ public class UsuarioService {
                 .rol(u.getRol())
                 .build();
     }
+
 }

@@ -5,15 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
 @Builder
-public class AuthResponseDTO {
-
+@NoArgsConstructor
+@AllArgsConstructor
+public class UsuarioResponseDTO {
     private Long id;
-    private Long idUsuarioRef;
-    private String username;
+    private String nombre;
+    private String correo;
+    private String password;
     private String rol;
-    private String token;
 }

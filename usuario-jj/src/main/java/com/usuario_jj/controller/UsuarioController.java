@@ -2,6 +2,8 @@ package com.usuario_jj.controller;
 
 import com.usuario_jj.dto.UsuarioRequestDTO;
 import com.usuario_jj.dto.UsuarioResponseDTO;
+import com.usuario_jj.model.Usuario;
+import com.usuario_jj.repository.UsuarioRepository;
 import com.usuario_jj.service.UsuarioService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -37,4 +39,17 @@ public class UsuarioController {
         service.eliminar(id, token);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/buscar/{correo:.+}")
+    public ResponseEntity<UsuarioResponseDTO> obtenerPorCorreo(
+            @PathVariable("correo") String correo,
+            @RequestHeader("Authorization") String token) {
+        return ResponseEntity.ok(service.buscarPorCorreo(correo, token));
+    }
+
+    @GetMapping("/interno/{correo:.+}") // <--- Agrega el :.+ aquí también
+    public ResponseEntity<UsuarioResponseDTO> buscarParaLogin(@PathVariable String correo) {
+        return ResponseEntity.ok(service.buscarParaAutenticacion(correo));
+    }
+
 }
