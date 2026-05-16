@@ -17,14 +17,12 @@ public class AuthService {
     private final AuthRepository repository;
     private final BCryptPasswordEncoder encoder;
     private final UsuarioClient usuarioClient;
-    private final JwtService jwtService;
+    private final JwtService jwtService; // <- Usaremos este para validar
 
     public AuthResponseDTO validarExistenciaUsuario(AuthRequestDTO dto) {
-
         try {
             usuarioClient.verificarExistencia(dto.getIdUsuarioRef());
         } catch (Exception e) {
-
             throw new RuntimeException("No se puede crear autenticación: El usuario con ID "
                     + dto.getIdUsuarioRef() + " no existe.");
         }
@@ -38,51 +36,64 @@ public class AuthService {
         return mapToDTO(repository.save(user), null);
     }
 
-    // ResponseDTO
+    // ResponseDTO unificado
     private AuthResponseDTO mapToDTO(Autenticacion user, String token) {
-        return new AuthResponseDTO(
-                user.getId(),
-                user.getIdUsuarioRef(),
-                user.getUsername(),
-                user.getRol(),
-                token);
+        return AuthResponseDTO.builder()
+                .id(user.getId())
+                .idUsuarioRef(user.getIdUsuarioRef())
+                .username(user.getUsername())
+                .rol(user.getRol())
+                .token(token)
+                .mensaje("Operación exitosa")
+                .build();
     }
 
-    // REGISTRAR
     public AuthResponseDTO registrar(AuthRequestDTO dto) {
-
         Autenticacion user = new Autenticacion();
         user.setIdUsuarioRef(dto.getIdUsuarioRef());
         user.setUsername(dto.getUsername());
-
         user.setPassword(encoder.encode(dto.getPassword()));
         user.setRol(dto.getRol());
 
         return mapToDTO(repository.save(user), null);
     }
 
-    // LOGIN
     public AuthResponseDTO login(String username, String password) {
-        // 1. Buscamos al usuario en la base de datos de Auth (por username)
         Autenticacion authUser = repository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
-        // 2. Validamos la contraseña (texto plano de Postman vs Hash de Oracle)
         if (!encoder.matches(password, authUser.getPassword())) {
             throw new RuntimeException("Credenciales incorrectas");
         }
 
-        // 3. Generamos el token usando el objeto de autenticación
+        // Generamos el JWT real
         String token = jwtService.generarToken(authUser);
 
-        // 4. Construimos el DTO con los nombres de campos exactos de tu imagen
-        return AuthResponseDTO.builder()
-                .id(authUser.getId())
-                .idUsuarioRef(authUser.getIdUsuarioRef())
-                .username(authUser.getUsername())
-                .rol(authUser.getRol())
-                .token(token)
-                .build();
+        return mapToDTO(authUser, token);
     }
 
+    public AuthResponseDTO validarToken(String headerToken) {
+        if (headerToken == null || headerToken.isBlank()) {
+            throw new RuntimeException("Token no proporcionado");
+        }
+
+        // 1. Limpiamos el Bearer
+        String token = headerToken.startsWith("Bearer ") ? headerToken.substring(7) : headerToken;
+
+        // 2. Usamos tu jwtService
+        if (!jwtService.validarToken(token)) {
+            throw new RuntimeException("Token inválido o expirado");
+        }
+
+        try {
+            // 3. Extraemos el usuario y lo buscamos en tu repo
+            String username = jwtService.extraerUsername(token);
+            Autenticacion user = repository.findByUsername(username)
+                    .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+            return mapToDTO(user, token);
+        } catch (Exception e) {
+            throw new RuntimeException("Error: " + e.getMessage());
+        }
+    }
 }

@@ -22,6 +22,7 @@ public class AuthController {
     // POST /api/auth/registrar -> 201 Created
     @PostMapping("/registrar")
     public ResponseEntity<AuthResponseDTO> registrar(@Valid @RequestBody AuthRequestDTO dto) {
+        // @Valid dispara las validaciones como @NotBlank [cite: 80, 149]
         return ResponseEntity.status(201).body(autenticacionService.registrar(dto));
     }
 
@@ -33,18 +34,9 @@ public class AuthController {
                 credenciales.get("username"),
                 credenciales.get("password")));
     }
-    @GetMapping("/validar")
-    public ResponseEntity<AuthResponseDTO> validarToken(@RequestHeader("Authorization") String authHeader) {
-        String token = authHeader.replace("Bearer ", "");
 
-        if (jwtService.validarToken(token)) {
-            return ResponseEntity.ok(AuthResponseDTO.builder()
-                    .token(token)
-                    .username(jwtService.extraerUsername(token))
-                    .rol(jwtService.extraerRol(token))
-                    .build());
-        }
-
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+    @GetMapping("/validar") // Ruta final: /api/auth/validar
+    public ResponseEntity<AuthResponseDTO> validarToken(@RequestHeader("Authorization") String token) {
+        return ResponseEntity.ok(autenticacionService.validarToken(token));
     }
 }
