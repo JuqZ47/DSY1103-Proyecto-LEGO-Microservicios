@@ -6,36 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="f01082d8-2d72-43e8-9be5-217724b76dab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/lego_jj/api_gateway/ApiGatewayApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/test/java/com/lego_jj/api_gateway/ApiGatewayApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-jj/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-jj/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/client/UsuarioClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/client/UsuarioClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/dto/AuthResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/dto/AuthResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/repository/AuthRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/repository/AuthRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-jj/src/main/java/com/auth_jj/auth_jj/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-jj/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/auth-jj/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogo-jj/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/catalogo-jj/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogo-jj/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/catalogo-jj/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/envio-jj/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/envio-jj/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventario-jj/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventario-jj/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventario-jj/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventario-jj/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pago-jj2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pago-jj2/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-jj/src/main/java/com/usuario_jj/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-jj/src/main/java/com/usuario_jj/controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-jj/src/main/java/com/usuario_jj/repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-jj/src/main/java/com/usuario_jj/repository/UsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-jj/src/main/java/com/usuario_jj/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-jj/src/main/java/com/usuario_jj/service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pago-jj2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pago-jj2/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-jj/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-jj/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usuario-jj/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-jj/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,6 +98,7 @@
     &quot;Spring Boot.InventarioJjApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.PagoJj2Application.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.UsuarioJjApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UsuarioJjApplication.executor&quot;: &quot;Run&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;julianRomero&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
@@ -278,21 +259,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsuarioJjApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="usuario-jj" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.usuario_jj.usuario_jj.UsuarioJjApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ApiGatewayApplication" />
         <item itemvalue="Spring Boot.UsuarioJjApplication (1)" />
+        <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Spring Boot.InventarioJjApplication" />
         <item itemvalue="Spring Boot.CatalogoJjApplication (1)" />
-        <item itemvalue="Application.ApiGatewayApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -311,7 +284,12 @@
       <workItem from="1778606245440" duration="444000" />
       <workItem from="1778784279503" duration="8660000" />
       <workItem from="1778804798284" duration="11487000" />
-      <workItem from="1778873010314" duration="2633000" />
+      <workItem from="1778873010314" duration="2812000" />
+      <workItem from="1778949988939" duration="5071000" />
+      <workItem from="1778955308345" duration="651000" />
+      <workItem from="1778956010034" duration="922000" />
+      <workItem from="1778956971510" duration="7151000" />
+      <workItem from="1778969130220" duration="305000" />
     </task>
     <servers />
   </component>

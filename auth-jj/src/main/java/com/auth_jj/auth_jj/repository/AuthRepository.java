@@ -7,4 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AuthRepository extends JpaRepository<Autenticacion, Long> {
     Optional<Autenticacion> findByUsername(String username);
+
+    Optional<Autenticacion> findByIdUsuarioRef(Long idUsuarioRef);
+
 }

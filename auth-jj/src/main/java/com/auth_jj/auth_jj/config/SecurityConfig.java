@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -19,13 +20,27 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                // 1. Desactivar CSRF (necesario para probar con Postman/APIs REST)
+                // 1. Deshabilitamos CSRF porque el token JWT ya nos protege
                 .csrf(csrf -> csrf.disable())
 
-                // 2. Configurar permisos de rutas
+                // 2. Configuramos la sesión como STATELESS (fundamental para JWT)
+                // Esto evita que el servidor guarde sesiones en memoria
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                )
+
+                // 3. Definimos qué rutas son públicas y cuáles privadas
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll() // <--- Deja libre el login y registro
-                        .anyRequest().authenticated()               // Bloquea todo lo demás
+                        // Permitimos login, registro y AMBOS nombres de validación para evitar fallos
+                        .requestMatchers(
+                                "/api/auth/registrar",
+                                "/api/auth/login",
+                                "/api/auth/validar-token",
+                                "/api/auth/validar"
+                        ).permitAll()
+
+                        // Cualquier otra ruta requiere que el usuario esté autenticado
+                        .anyRequest().authenticated()
                 );
 
         return http.build();
