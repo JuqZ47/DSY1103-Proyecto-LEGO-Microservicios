@@ -11,25 +11,23 @@
       <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/dto/PedidoResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/exception/ResourceNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/java/lego_ms_instructions_jj/LegoMsInstructionsJjApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/java/lego_ms_instructions_jj/client/CatalogClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/java/lego_ms_instructions_jj/config/CorsConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/java/lego_ms_instructions_jj/controller/InstructionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/java/lego_ms_instructions_jj/dto/InstructionRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/java/lego_ms_instructions_jj/dto/InstructionResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/java/lego_ms_instructions_jj/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/java/lego_ms_instructions_jj/exception/ResourceNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/java/lego_ms_instructions_jj/model/Instruction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/java/lego_ms_instructions_jj/repository/InstructionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/java/lego_ms_instructions_jj/service/InstructionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-instructions-jj/src/test/java/lego_ms_instructions_jj/LegoMsInstructionsJjApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/src/main/java/com/loyalty_jj/LegoMsLoyaltyJjApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/src/main/java/com/loyalty_jj/catalogofeing/CatalogoFeignClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/src/main/java/com/loyalty_jj/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/src/main/java/com/loyalty_jj/controller/LoyaltyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/src/main/java/com/loyalty_jj/dto/LoyaltyDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/src/main/java/com/loyalty_jj/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/src/main/java/com/loyalty_jj/model/Loyalty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/src/main/java/com/loyalty_jj/repository/LoyaltyRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/src/main/java/com/loyalty_jj/service/LoyaltyService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-loyalty-jj/src/test/java/com/loyalty_jj/LegoMsLoyaltyJjApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj/src/main/java/com/orders_jj/lego_ms_orders_jj/controller/PedidoController.java" afterDir="false" />

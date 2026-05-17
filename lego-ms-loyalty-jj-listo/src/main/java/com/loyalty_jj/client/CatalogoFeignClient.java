@@ -1,4 +1,4 @@
-package com.loyalty_jj.catalogofeing;
+package com.loyalty_jj.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
