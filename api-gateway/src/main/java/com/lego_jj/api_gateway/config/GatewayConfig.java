@@ -25,6 +25,12 @@ public class GatewayConfig {
                         .uri("lb://envio-jj"))
                 .route("pieza-service", r -> r.path("/api/piezas/**")
                         .uri("lb://piezas-jj"))
+                .route("review-service", r -> r.path("/api/reviews/**")
+                        .uri("lb://lego-ms-reviews"))
+                .route("instruction-service", r -> r.path("/api/instructions/**")
+                        .uri("lb://lego-ms-instructions"))
+                .route("loyalty-service", r -> r.path("/api/loyalty/**")
+                        .uri("lb://lego-ms-loyalty"))
                 .build();
     }
 }
