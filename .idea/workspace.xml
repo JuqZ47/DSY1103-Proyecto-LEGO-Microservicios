@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f01082d8-2d72-43e8-9be5-217724b76dab" name="Changes" comment="Microservicio users funcional, terminado">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/client/AuthClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/client/CatalogClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/client/InventoryClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/client/UserClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/dto/AuthResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/dto/PedidoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/services/PedidoServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/controller/PedidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/dto/PedidoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/dto/PedidoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/model/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/repository/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/repository/PedidoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/service/PedidoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
