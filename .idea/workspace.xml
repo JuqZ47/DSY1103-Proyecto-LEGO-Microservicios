@@ -8,9 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/lego_jj/api_gateway/config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/lego_jj/api_gateway/config/GatewayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pago-jj2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pago-jj2/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +90,9 @@
     "Spring Boot.EnvioJjApplication.executor": "Run",
     "Spring Boot.EurekaServerApplication.executor": "Run",
     "Spring Boot.InventarioJjApplication.executor": "Run",
+    "Spring Boot.LegoMsInstructionsJjApplication.executor": "Run",
+    "Spring Boot.LegoMsLoyaltyJjApplication.executor": "Run",
+    "Spring Boot.LegoMsReviewsJjApplication.executor": "Run",
     "Spring Boot.PagoJj2Application.executor": "Run",
     "Spring Boot.PiezasJjApplication.executor": "Run",
     "Spring Boot.UsuarioJjApplication (1).executor": "Run",
@@ -135,12 +138,9 @@
             <map>
               <entry key="ApiGatewayApplication" value="STOPPED" />
               <entry key="AuthJjApplication" value="STOPPED" />
-              <entry key="CatalogoJjApplication (1)" value="STOPPED" />
-              <entry key="EnvioJjApplication" value="STOPPED" />
               <entry key="EurekaServerApplication" value="STOPPED" />
-              <entry key="InventarioJjApplication" value="STOPPED" />
-              <entry key="PagoJj2Application" value="STOPPED" />
-              <entry key="PiezasJjApplication" value="STOPPED" />
+              <entry key="LegoMsInstructionsJjApplication" value="STOPPED" />
+              <entry key="LegoMsReviewsJjApplication" value="STOPPED" />
               <entry key="UsuarioJjApplication (1)" value="STOPPED" />
             </map>
           </value>
@@ -161,6 +161,17 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="api-gateway" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="api-gateway" />
+      <option name="filePath" />
+      <method v="2" />
     </configuration>
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -186,7 +197,7 @@
     </configuration>
     <configuration name="CatalogoJjApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="inventario-jj (1)" />
+      <module name="catalogo-jj" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.catalogo_jj.CatalogoJjApplication" />
       <extension name="coverage">
         <pattern>
@@ -231,6 +242,30 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LegoMsInstructionsJjApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="lego-ms-instructions-jj" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="lego_ms_instructions_jj.LegoMsInstructionsJjApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LegoMsLoyaltyJjApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="lego-ms-loyalty-jj" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.loyalty_jj.LegoMsLoyaltyJjApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LegoMsReviewsJjApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="lego-ms-reviews-jj" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.reviews_jj.LegoMsReviewsJjApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -295,6 +330,11 @@
       <workItem from="1778956010034" duration="922000" />
       <workItem from="1778956971510" duration="7151000" />
       <workItem from="1778969130220" duration="7144000" />
+      <workItem from="1779047467537" duration="105000" />
+      <workItem from="1779047935885" duration="17000" />
+      <workItem from="1779047982776" duration="28000" />
+      <workItem from="1779048029233" duration="26000" />
+      <workItem from="1779048091043" duration="2734000" />
     </task>
     <servers />
   </component>
