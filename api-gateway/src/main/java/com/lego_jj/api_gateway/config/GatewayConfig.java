@@ -31,6 +31,8 @@ public class GatewayConfig {
                         .uri("lb://lego-ms-instructions"))
                 .route("loyalty-service", r -> r.path("/api/loyalty/**")
                         .uri("lb://lego-ms-loyalty"))
+                .route("pedido-service", r -> r.path("/api/pedidos/**")
+                        .uri("lb://lego-ms-orders"))
                 .build();
     }
 }
