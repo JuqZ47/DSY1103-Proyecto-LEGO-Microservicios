@@ -5,12 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f01082d8-2d72-43e8-9be5-217724b76dab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/client/AuthClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/client/CatalogClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/client/InventoryClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/client/UserClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/dto/AuthResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/dto/PedidoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/services/PedidoServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/lego_jj/api_gateway/config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/lego_jj/api_gateway/config/GatewayConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/LegoMsOrdersJjApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/controller/PedidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/dto/PedidoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/dto/PedidoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/model/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/repository/PedidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/repository/PedidoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/java/com/orders_jj/lego_ms_orders_jj/service/PedidoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lego-ms-orders-jj-listo/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +48,7 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/lego-ms-orders-jj-listo" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -92,13 +108,14 @@
     "Spring Boot.InventarioJjApplication.executor": "Run",
     "Spring Boot.LegoMsInstructionsJjApplication.executor": "Run",
     "Spring Boot.LegoMsLoyaltyJjApplication.executor": "Run",
+    "Spring Boot.LegoMsOrdersJjApplication.executor": "Run",
     "Spring Boot.LegoMsReviewsJjApplication.executor": "Run",
     "Spring Boot.PagoJj2Application.executor": "Run",
     "Spring Boot.PiezasJjApplication.executor": "Run",
     "Spring Boot.UsuarioJjApplication (1).executor": "Run",
     "Spring Boot.UsuarioJjApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "julianRomero",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/romer/OneDrive/Desktop/Proyecto fullstack/LegoJJ",
@@ -140,6 +157,8 @@
               <entry key="AuthJjApplication" value="STOPPED" />
               <entry key="EurekaServerApplication" value="STOPPED" />
               <entry key="LegoMsInstructionsJjApplication" value="STOPPED" />
+              <entry key="LegoMsLoyaltyJjApplication" value="STOPPED" />
+              <entry key="LegoMsOrdersJjApplication" value="STOPPED" />
               <entry key="LegoMsReviewsJjApplication" value="STOPPED" />
               <entry key="UsuarioJjApplication (1)" value="STOPPED" />
             </map>
@@ -262,6 +281,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LegoMsOrdersJjApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="lego-ms-orders-jj" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.orders_jj.lego_ms_orders_jj.LegoMsOrdersJjApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LegoMsReviewsJjApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="lego-ms-reviews-jj" />
@@ -334,7 +361,7 @@
       <workItem from="1779047935885" duration="17000" />
       <workItem from="1779047982776" duration="28000" />
       <workItem from="1779048029233" duration="26000" />
-      <workItem from="1779048091043" duration="2734000" />
+      <workItem from="1779048091043" duration="4567000" />
     </task>
     <servers />
   </component>
