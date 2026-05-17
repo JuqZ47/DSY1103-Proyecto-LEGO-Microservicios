@@ -9,10 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="inventario-jj (1)" />
-        <module name="pago-jj2" />
         <module name="eureka-server" />
       </profile>
-      <profile name="Annotation profile for usuario-jj" enabled="true">
+      <profile name="Annotation profile for piezas-jj" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -21,7 +20,9 @@
         </processorPath>
         <module name="usuario-jj" />
         <module name="envio-jj" />
+        <module name="piezas-jj" />
         <module name="inventario-jj" />
+        <module name="pago-jj2" />
         <module name="auth-jj" />
       </profile>
     </annotationProcessing>
@@ -35,6 +36,7 @@
       <module name="inventario-jj" options="-parameters" />
       <module name="inventario-jj (1)" options="-parameters" />
       <module name="pago-jj2" options="-parameters" />
+      <module name="piezas-jj" options="-parameters" />
       <module name="usuario-jj" options="-parameters" />
     </option>
   </component>

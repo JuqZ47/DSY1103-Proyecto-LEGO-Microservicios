@@ -23,6 +23,8 @@ public class GatewayConfig {
                         .uri("lb://pago-jj"))
                 .route("envio-service", r -> r.path("/api/envios/**")
                         .uri("lb://envio-jj"))
+                .route("pieza-service", r -> r.path("/api/piezas/**")
+                        .uri("lb://piezas-jj"))
                 .build();
     }
 }
