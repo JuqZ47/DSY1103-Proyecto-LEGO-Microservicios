@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api-gateway" />
+        <module name="catalogo-jj" />
+        <module name="eureka-server" />
+      </profile>
+      <profile name="Annotation profile for usuario-jj" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="usuario-jj" />
+        <module name="envio-jj" />
+        <module name="piezas-jj" />
+        <module name="inventario-jj" />
+        <module name="pago-jj2" />
+        <module name="auth-jj" />
+      </profile>
+      <profile name="Annotation profile for lego-ms-orders-jj" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="lego-ms-loyalty-jj" />
+        <module name="lego-ms-orders-jj" />
+        <module name="lego-ms-instructions-jj" />
+        <module name="lego-ms-reviews-jj" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="inventario-jj (1)" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
+      <module name="auth-jj" options="-parameters" />
+      <module name="catalogo-jj" options="-parameters" />
+      <module name="envio-jj" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="inventario-jj" options="-parameters" />
+      <module name="inventario-jj (1)" options="-parameters" />
+      <module name="lego-ms-instructions-jj" options="-parameters" />
+      <module name="lego-ms-loyalty-jj" options="-parameters" />
+      <module name="lego-ms-orders-jj" options="-parameters" />
+      <module name="lego-ms-reviews-jj" options="-parameters" />
+      <module name="pago-jj2" options="-parameters" />
+      <module name="piezas-jj" options="-parameters" />
+      <module name="usuario-jj" options="-parameters" />
+    </option>
+  </component>
+</project>
