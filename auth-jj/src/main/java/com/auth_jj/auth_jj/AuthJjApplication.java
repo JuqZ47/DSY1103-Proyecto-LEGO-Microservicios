@@ -1,14 +1,15 @@
-package lego_ms_instructions_jj;
+package com.auth_jj.auth_jj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@SpringBootApplication
 @EnableFeignClients
-public class LegoMsInstructionsJjApplication {
+@SpringBootApplication
+public class AuthJjApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LegoMsInstructionsJjApplication.class, args);
+		SpringApplication.run(AuthJjApplication.class, args);
 	}
+
 }

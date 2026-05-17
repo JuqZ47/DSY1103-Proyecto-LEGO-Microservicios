@@ -1,99 +1,40 @@
 package com.users_jj.lego_ms_users_jj.controller;
 
-import com.users_jj.lego_ms_users_jj.dto.UsuarioRequest;
-import com.users_jj.lego_ms_users_jj.model.Usuario;
+import com.users_jj.lego_ms_users_jj.dto.UsuarioRequestDTO;
+import com.users_jj.lego_ms_users_jj.dto.UsuarioResponseDTO;
 import com.users_jj.lego_ms_users_jj.service.UsuarioService;
 import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/api/usuarios")
+@RequiredArgsConstructor
 public class UsuarioController {
 
-    private final UsuarioService usuarioService;
+    private final UsuarioService service;
 
-    public UsuarioController(UsuarioService usuarioService) {
-        this.usuarioService = usuarioService;
-    }
-
-    @PostMapping("/guardar")
-    public ResponseEntity<?> guardarUsuario(@Valid @RequestBody UsuarioRequest request) {
-
-        try {
-
-            Usuario nuevoUsuario = usuarioService.guardarUsuario(request);
-
-            return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuario);
-
-        } catch (Exception e) {
-
-            Map<String, String> error = new HashMap<>();
-            error.put("mensaje", "Error al guardar usuario");
-
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
-        }
+    @PostMapping("/registro")
+    public ResponseEntity<UsuarioResponseDTO> crear(@Valid @RequestBody UsuarioRequestDTO dto) {
+        return ResponseEntity.status(201).body(service.registrar(dto));
     }
 
     @GetMapping
-    public ResponseEntity<?> listarUsuarios() {
-
-        try {
-
-            return ResponseEntity.ok(usuarioService.listarUsuarios());
-
-        } catch (Exception e) {
-
-            Map<String, String> error = new HashMap<>();
-            error.put("mensaje", "Error al listar usuarios");
-
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
-        }
+    public ResponseEntity<List<UsuarioResponseDTO>> listar(@RequestHeader("Authorization") String token) {
+        return ResponseEntity.ok(service.obtenerTodos(token));
     }
 
-    @GetMapping("/correo/{correo}")
-    public ResponseEntity<?> buscarPorCorreo(@PathVariable String correo) {
-
-        try {
-
-            Usuario usuario = usuarioService.buscarPorCorreo(correo);
-
-            if (usuario == null) {
-
-                Map<String, String> error = new HashMap<>();
-                error.put("mensaje", "Usuario no encontrado");
-
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
-            }
-
-            return ResponseEntity.ok(usuario);
-
-        } catch (Exception e) {
-
-            Map<String, String> error = new HashMap<>();
-            error.put("mensaje", "Error al buscar usuario");
-
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
-        }
+    @GetMapping("/{id}")
+    public ResponseEntity<UsuarioResponseDTO> buscar(@PathVariable Long id, @RequestHeader("Authorization") String token) {
+        return ResponseEntity.ok(service.obtenerPorId(id, token));
     }
 
-    @GetMapping("/rol/{rol}")
-    public ResponseEntity<?> buscarPorRol(@PathVariable String rol) {
-
-        try {
-
-            return ResponseEntity.ok(usuarioService.buscarPorRol(rol));
-
-        } catch (Exception e) {
-
-            Map<String, String> error = new HashMap<>();
-            error.put("mensaje", "Error al buscar usuarios por rol");
-
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
-        }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> borrar(@PathVariable Long id, @RequestHeader("Authorization") String token) {
+        service.eliminar(id, token);
+        return ResponseEntity.noContent().build();
     }
 }
